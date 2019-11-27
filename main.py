@@ -95,7 +95,7 @@ def main():
     global level_time
     global time_step
     global window
-    global menu_level_botton
+    global menu_level_button
     global menu_record_button
     global exit_button
     global Name
