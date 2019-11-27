@@ -4,9 +4,7 @@ window_width = 1600
 
 window_height = 800
 
-coords_win = [0, 0]
-
-def change_position(obj, size):
+def change_position(obj, size, coords_win):
     if (size > window_width):
         if (obj.x - coords_win[0] > window_width * 3 / 4):
             coords_win[0] = obj.x - 3 * window_width / 4
@@ -18,15 +16,17 @@ def change_position(obj, size):
             coords_win[0] = size - window_width
     else:
         coords_win[0] = (size - window_width) / 2
+    return coords_win
 
 
-def create_image(win, obj):
-    x = obj.x
-    y = obj.y
+def create_image(win, obj, coords_win):
+    x = obj.x - coords_win[0]
+    y = obj.y - coords_win[1]
     r = obj.r
     obj.image = win.create_rectangle([x - r, y - r], [x + r, y + r], fill = obj.color)
 
-def update_image(win, obj):
+
+def update_image(win, obj, coords_win):
     x = obj.x - coords_win[0]
     y = obj.y - coords_win[1]
     r = obj.r

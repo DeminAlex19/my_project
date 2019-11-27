@@ -84,3 +84,12 @@ class Item:
         self.damage = int(line.split()[2])
         self.cost = int(line.split()[3])
         self.color = line.split()[4]
+
+
+def count_size_level(objects):
+    size_variable = 0
+    for obj in objects:
+        if(obj.x > size_variable):
+            size_variable = obj.x + 10
+
+    return size_variable
