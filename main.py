@@ -20,20 +20,33 @@ list_levels = [
 ]
 scores_file = 'High_score.txt'
 level_objects = []
+size_level = 0
+hero = None
 
 
 
 def execution():
     global flag_perform
-    global gaming_step
     global time_step
     global exit_button
+    global hero
+    global level_objects
+    global size_level
+    global coords_win
+
+    if flag_perform:
+        window.after(time_step - int(time_speed.get()), execution)
 
 
 
 def start_level(level_name):
-    global level_object
-    level_objects = read_level(level_name)
+    global level_objects
+    global hero
+    global size_level
+    global coords_win
+    level_objects = read_level(level_name, hero)
+    size_level = count_size_level(level_objects)
+    change_position(hero, size_level)
 
 
 

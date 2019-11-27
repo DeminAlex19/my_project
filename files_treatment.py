@@ -1,7 +1,7 @@
 from classes import *
 import datetime
 
-def read_level(level_name):
+def read_level(level_name, hero_obj):
     objects = []
 
     with open(level_name + '.txt') as input_file:
@@ -18,6 +18,8 @@ def read_level(level_name):
                 body_one = Body()
                 body_one.parse_parametrs(line)
                 objects.append(body_one)
+                if(body_one.type.lower() == 'hero'):
+                    hero_obj = body_one
                 del body_one
             if(object_type == "item"):
                 item_one = Item()
