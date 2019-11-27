@@ -1,4 +1,4 @@
-class block:
+class Block:
     type = None
 
     x = 0
@@ -17,8 +17,15 @@ class block:
 
     color = 'green'
 
+    def parse_parametrs(self, line):
+        self.x = int(line.split()[1])
+        self.y = int(line.split()[2])
+        self.r = int(line.split()[3])
+        self.damage = int(line.split()[4])
+        self.color = line.split()[5]
 
-class body:
+
+class Body:
     type = None
 
     x = 0
@@ -47,10 +54,23 @@ class body:
 
     color = 'red'
 
+    def parse_parametrs(self, line):
+        self.x = int(line.split()[1])
+        self.y = int(line.split()[2])
+        self.vx = int(line.split()[3])
+        self.vy = int(line.split()[4])
+        self.r = int(line.split()[5])
+        self.type = line.split()[6]
+        self.life = int(line.split()[7])
+        self.type_attack = line.split()[8]
+        self.damage = int(line.split()[9])
+        self.loyalty = int(line.split()[10])
+        self.exp_reward = int(line.split()[11])
+        self.gold_reward = int(line.split()[12])
+        self.color = line.split()[13]
 
-class item:
-    health = 0
 
+class Item:
     type_attack = None
 
     color = 'yellow'
@@ -58,3 +78,9 @@ class item:
     damage = 0
 
     cost = 0
+
+    def parse_parametrs(self, line):
+        self.type_attack = line.split()[1]
+        self.damage = int(line.split()[2])
+        self.cost = int(line.split()[3])
+        self.color = line.split()[4]

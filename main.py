@@ -1,6 +1,7 @@
 import tkinter
 from classes import *
 from vis import *
+from files_treatment import *
 
 
 
@@ -17,7 +18,8 @@ Name = None
 list_levels = [
     'Level 1'
 ]
-level_object = []
+scores_file = 'High_score.txt'
+level_objects = []
 
 
 
@@ -31,7 +33,8 @@ def execution():
 
 def start_level(level_name):
     global level_object
-    level_object = read_level(level_name)
+    level_objects = read_level(level_name)
+
 
 
 
