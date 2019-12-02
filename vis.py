@@ -1,10 +1,8 @@
 t_font = "Arial-16"
+from tkinter import *
 
-window_width = 1600
 
-window_height = 800
-
-def change_position(obj, size, coords_win):
+def change_position(obj, size, coords_win, window_width, window_height):
     if (size > window_width):
         if (obj.x - coords_win[0] > window_width * 3 / 4):
             coords_win[0] = obj.x - 3 * window_width / 4

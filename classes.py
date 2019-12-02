@@ -22,7 +22,7 @@ class Block:
         self.y = int(line.split()[2])
         self.r = int(line.split()[3])
         self.damage = int(line.split()[4])
-        self.color = line.split()[5]
+        self.color = line.split()[5].lower()
 
 
 class Body:
@@ -60,14 +60,14 @@ class Body:
         self.vx = int(line.split()[3])
         self.vy = int(line.split()[4])
         self.r = int(line.split()[5])
-        self.type = line.split()[6]
+        self.type = line.split()[6].lower()
         self.life = int(line.split()[7])
-        self.type_attack = line.split()[8]
+        self.type_attack = line.split()[8].lower()
         self.damage = int(line.split()[9])
         self.loyalty = int(line.split()[10])
         self.exp_reward = int(line.split()[11])
         self.gold_reward = int(line.split()[12])
-        self.color = line.split()[13]
+        self.color = line.split()[13].lower()
 
 
 class Item:
@@ -80,14 +80,14 @@ class Item:
     cost = 0
 
     def parse_parametrs(self, line):
-        self.type_attack = line.split()[1]
+        self.type_attack = line.split()[1].lower()
         self.damage = int(line.split()[2])
         self.cost = int(line.split()[3])
-        self.color = line.split()[4]
+        self.color = line.split()[4].lower()
 
 
 def count_size_level(objects):
-    size_variable = 0
+    size_variable = 100
     for obj in objects:
         if(obj.x > size_variable):
             size_variable = obj.x + 10

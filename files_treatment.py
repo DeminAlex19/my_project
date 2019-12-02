@@ -1,7 +1,7 @@
 from classes import *
 import datetime
 
-def read_level(level_name, hero_obj):
+def read_level(level_name):
     objects = []
 
     with open(level_name + '.txt') as input_file:
@@ -18,8 +18,6 @@ def read_level(level_name, hero_obj):
                 body_one = Body()
                 body_one.parse_parametrs(line)
                 objects.append(body_one)
-                if(body_one.type.lower() == 'hero'):
-                    hero_obj = body_one
                 del body_one
             if(object_type == "item"):
                 item_one = Item()
@@ -30,7 +28,16 @@ def read_level(level_name, hero_obj):
 
     return objects
 
+def find_hero(objects, hero):
+    for obj in objects:
+        if(obj.type == 'hero'):
+            hero = obj
+    return hero
 
 def write_scores(file, score):
     with open(file, 'w') as out_file:
         print(out_file, "%s %d" % (str(datetime.datetime.now()) , score))
+
+
+def view_scores(win):
+    None
