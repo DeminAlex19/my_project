@@ -25,7 +25,7 @@ flag_perform = False
 '''Флаг основногой цикличности'''
 level_time = 0
 '''Время уровня'''
-time_step = 100
+time_step = 1
 
 menu_level_button = []
 menu_record_button = None
@@ -89,10 +89,10 @@ def execution():
         press_button_left = False
         press_button_right = False
     if(press_button_up == True and press_button_down != True):
-        hero.vy += 30
+        hero.vy -= 1
         press_button_up = False
     elif(press_button_down == True and press_button_up != True):
-        hero.vy -= 30
+        hero.vy += 1
         press_button_down = False
     if (press_button_special == True):
         special(hero)
@@ -107,6 +107,7 @@ def execution():
     for obj in level_objects:
         update_image(window, obj, coords_win)
 
+    print(hero.x, hero.y, hero.vx, hero.vy)
     if flag_perform:
         window.after(time_step, execution)
 
@@ -161,11 +162,14 @@ def continue_execution():
     global screen_pause
     global flag_perform
     global continue_button
+    global pause_button
     global frame
+    global window
     flag_perform = True
-    screen_pause = None
+    window.delete(screen_pause)
     continue_button.destroy()
-
+    pause_button = tkinter.Button(frame, text='Pause', command=stop_execution)
+    pause_button.pack(side=tkinter.LEFT)
     execution()
     # Удаление кнопки продолжения и запуск выполнения
 
@@ -189,8 +193,6 @@ def menu():
         level_button.pack()
         del level_button
 
-    root.mainloop()
-
 
 
 def main():
@@ -207,5 +209,6 @@ def main():
     Name.pack(side=RIGHT)
 
     menu()
+    root.mainloop()
 
 main()

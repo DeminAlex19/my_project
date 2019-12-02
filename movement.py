@@ -1,6 +1,6 @@
 def move(obj, time_step):
-    obj.x += obj.vx * time_step
-    obj.y += obj.vy * time_step
+    obj.x += obj.vx
+    obj.y += obj.vy
     obj.vx = 0
 
 
