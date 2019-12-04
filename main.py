@@ -98,18 +98,18 @@ def execution():
     global press_button_act
     global press_button_special
     level_time += time_step
-    if press_button_right == True:
+    if press_button_right:
         hero.vx = 0.5
-    if press_button_left == True:
+    if press_button_left:
         hero.vx = -0.5
-    if press_button_up == True and checkground(hero, level_objects):
+    if press_button_up and checkground(hero, level_objects):
         hero.vy -= 1
-    if press_button_down == True:
+    if press_button_down:
         hero.typeattack = 'fall'
-    if press_button_special == True:
+    if press_button_special:
         special(hero)
         press_button_special = False
-    if press_button_act == True and press_button_special != True:
+    if press_button_act and press_button_special != True:
         action(hero)
         press_button_act = False
     for body in level_objects:
@@ -218,8 +218,8 @@ def main():
 
     frame = tkinter.Frame(root)
     frame.pack(side=TOP)
-    Name = tkinter.Label(frame, textvariable="The Nario", width=10)
-    Name.pack(side=RIGHT)
+    name = tkinter.Label(frame, text="The Nario", width=10, bg='yellow', fg='red', font=('Arial 32', 10, 'bold'))
+    name.pack(side=RIGHT)
 
     menu()
     root.mainloop()

@@ -91,6 +91,6 @@ def count_size_level(objects):
     size_variable = 100
     for obj in objects:
         if obj.x > size_variable:
-            size_variable = obj.x + 10
+            size_variable = obj.x + obj.r*3
 
     return size_variable

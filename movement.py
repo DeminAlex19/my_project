@@ -13,7 +13,7 @@ def checkground(hero, level_objects):
     flag = False
     for obj in level_objects:
         if obj.type == 'ground':
-            if (hero.x + hero.r >= obj.x - obj.r >= hero.x - hero.r or hero.x + hero.r >= obj.x + obj.r and hero.x - hero.r <= obj.x + obj.r) and (hero.y + hero.r == obj.y - obj.r):
+            if (hero.x + hero.r >= obj.x - obj.r >= hero.x - hero.r or hero.x + hero.r >= obj.x + obj.r >= hero.x - hero.r) and (hero.y + hero.r == obj.y - obj.r):
                 return True
                 flag = True
     if flag == False:

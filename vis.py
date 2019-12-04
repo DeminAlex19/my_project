@@ -20,7 +20,7 @@ def create_image(win, obj, coords_win):
     x = obj.x - coords_win[0]
     y = obj.y - coords_win[1]
     r = obj.r
-    obj.image = win.create_rectangle([x - r, y - r], [x + r, y + r], fill = obj.color)
+    obj.image = win.create_rectangle([x - r, y - r], [x + r, y + r], fill=obj.color)
 
 
 def update_image(win, obj, coords_win):
