@@ -22,7 +22,8 @@ class Block:
         self.y = float(line.split()[2])
         self.r = float(line.split()[3])
         self.damage = float(line.split()[4])
-        self.color = line.split()[5].lower()
+        self.type = line.split()[5].lower()
+        self.color = line.split()[6].lower()
 
 
 class Body:

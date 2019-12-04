@@ -12,7 +12,7 @@ def read_level(level_name):
             object_type = line.split()[0].lower()
             if object_type == "block":
                 block_one = Block()
-                block_one.parse_parameters(line)
+                block_one.parse_parametrs(line)
                 objects.append(block_one)
                 del block_one
             if object_type == "body":
