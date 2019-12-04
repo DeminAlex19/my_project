@@ -1,6 +1,7 @@
 from classes import *
 import datetime
 
+
 def read_level(level_name):
     objects = []
 
@@ -9,17 +10,17 @@ def read_level(level_name):
             if len(line.strip()) == 0 or line[0] == '#':
                 continue
             object_type = line.split()[0].lower()
-            if(object_type == "block"):
+            if object_type == "block":
                 block_one = Block()
                 block_one.parse_parameters(line)
                 objects.append(block_one)
                 del block_one
-            if(object_type == "body"):
+            if object_type == "body":
                 body_one = Body()
                 body_one.parse_parametrs(line)
                 objects.append(body_one)
                 del body_one
-            if(object_type == "item"):
+            if object_type == "item":
                 item_one = Item()
                 item_one.parse_parametrs(line)
                 objects.append(item_one)
@@ -28,15 +29,17 @@ def read_level(level_name):
 
     return objects
 
+
 def find_hero(objects, hero):
     for obj in objects:
-        if(obj.type == 'hero'):
+        if obj.type == 'hero':
             hero = obj
     return hero
 
+
 def write_scores(file, score):
     with open(file, 'w') as out_file:
-        print(out_file, "%s %d" % (str(datetime.datetime.now()) , score))
+        print(out_file, "%s %d" % (str(datetime.datetime.now()), score))
 
 
 def view_scores(win):

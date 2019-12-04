@@ -18,10 +18,10 @@ class Block:
     color = 'green'
 
     def parse_parametrs(self, line):
-        self.x = int(line.split()[1])
-        self.y = int(line.split()[2])
-        self.r = int(line.split()[3])
-        self.damage = int(line.split()[4])
+        self.x = float(line.split()[1])
+        self.y = float(line.split()[2])
+        self.r = float(line.split()[3])
+        self.damage = float(line.split()[4])
         self.color = line.split()[5].lower()
 
 
@@ -55,15 +55,15 @@ class Body:
     color = 'red'
 
     def parse_parametrs(self, line):
-        self.x = int(line.split()[1])
-        self.y = int(line.split()[2])
-        self.vx = int(line.split()[3])
-        self.vy = int(line.split()[4])
-        self.r = int(line.split()[5])
+        self.x = float(line.split()[1])
+        self.y = float(line.split()[2])
+        self.vx = float(line.split()[3])
+        self.vy = float(line.split()[4])
+        self.r = float(line.split()[5])
         self.type = line.split()[6].lower()
-        self.life = int(line.split()[7])
+        self.life = float(line.split()[7])
         self.type_attack = line.split()[8].lower()
-        self.damage = int(line.split()[9])
+        self.damage = float(line.split()[9])
         self.loyalty = int(line.split()[10])
         self.exp_reward = int(line.split()[11])
         self.gold_reward = int(line.split()[12])
@@ -81,7 +81,7 @@ class Item:
 
     def parse_parametrs(self, line):
         self.type_attack = line.split()[1].lower()
-        self.damage = int(line.split()[2])
+        self.damage = float(line.split()[2])
         self.cost = int(line.split()[3])
         self.color = line.split()[4].lower()
 
@@ -89,7 +89,7 @@ class Item:
 def count_size_level(objects):
     size_variable = 100
     for obj in objects:
-        if(obj.x > size_variable):
+        if obj.x > size_variable:
             size_variable = obj.x + 10
 
     return size_variable
