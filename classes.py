@@ -20,10 +20,12 @@ class Block:
     def parse_parametrs(self, line):
         self.x = float(line.split()[1])
         self.y = float(line.split()[2])
-        self.r = float(line.split()[3])
-        self.damage = float(line.split()[4])
-        self.type = line.split()[5].lower()
-        self.color = line.split()[6].lower()
+        self.vx = float(line.split()[3])
+        self.vy = float(line.split()[4])
+        self.r = float(line.split()[5])
+        self.damage = float(line.split()[6])
+        self.type = line.split()[7].lower()
+        self.color = line.split()[8].lower()
 
 
 class Body:

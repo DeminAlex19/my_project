@@ -1,42 +1,42 @@
 Body 104 319 0 0 20 Hero 10 hit 10 1 0 0 red
-Block 64 239 20 0 ground green
-Block 64 279 20 0 ground green
-Block 64 319 20 0 ground green
-Block 64 359 20 0 ground green
-Block 104 359 20 0 ground green
-Block 144 359 20 0 ground green
-Block 144 319 20 0 ground green
-Block 184 359 20 0 ground green
-Block 224 359 20 0 ground green
-Block 264 359 20 0 ground green
-Block 304 359 20 0 ground green
-Block 344 359 20 0 ground green
-Block 344 319 20 0 ground green
-Block 384 359 20 0 ground green
-Block 424 359 20 0 ground green
-Block 464 359 20 0 ground green
-Block 504 359 20 0 ground green
-Block 544 359 20 0 ground green
-Block 584 359 20 0 ground green
-Block 624 359 20 0 ground green
-Block 664 359 20 0 ground green
-Block 704 359 20 0 ground green
-Block 744 359 20 0 ground green
-Block 784 359 20 0 ground green
-Block 824 359 20 0 ground green
-Block 864 359 20 0 ground green
-Block 904 359 20 0 ground green
-Block 944 359 20 0 ground green
-Block 984 359 20 0 ground green
-Block 1024 359 20 0 ground green
-Block 1064 359 20 0 ground green
-Block 1104 359 20 0 ground green
-Block 1144 359 20 0 ground green
-Block 1184 359 20 0 ground green
-Block 1224 359 20 0 ground green
-Block 1264 359 20 0 ground green
-Block 1304 359 20 0 ground green
-Block 1344 359 20 0 ground green
-Block 1384 359 20 0 ground green
-Block 1424 359 20 0 ground green
-Block 1464 359 20 0 ground green
+Block 64 239 0 0 20 0 ground green
+Block 64 279 0 0 20 0 ground green
+Block 64 319 0 0 20 0 ground green
+Block 64 359 0 0 20 0 ground green
+Block 104 359 0 0 20 0 ground green
+Block 144 359 0 0 20 0 ground green
+Block 144 319 0 0 20 0 ground green
+Block 184 359 0 0 20 0 ground green
+Block 224 359 0 0 20 0 ground green
+Block 264 359 0 0 20 0 ground green
+Block 304 359 0 0 20 0 ground green
+Block 344 359 0 0 20 0 ground green
+Block 344 319 0 0 20 0 ground green
+Block 384 359 0 0 20 0 ground green
+Block 424 359 0 0 20 0 ground green
+Block 464 359 0 0 20 0 ground green
+Block 504 359 0 0 20 0 ground green
+Block 544 359 0 0 20 0 ground green
+Block 584 359 0 0 20 0 ground green
+Block 624 359 0 0 20 0 ground green
+Block 664 359 0 0 20 0 ground green
+Block 704 359 0 0 20 0 ground green
+Block 744 359 0 0 20 0 ground green
+Block 784 359 0 0 20 0 ground green
+Block 824 359 0 0 20 0 ground green
+Block 864 359 0 0 20 0 ground green
+Block 904 359 0 0 20 0 ground green
+Block 944 359 0 0 20 0 ground green
+Block 984 359 0 0 20 0 ground green
+Block 1024 359 0 0 20 0 ground green
+Block 1064 359 0 0 20 0 ground green
+Block 1104 359 0 0 20 0 ground green
+Block 1144 359 0 0 20 0 ground green
+Block 1184 359 0 0 20 0 ground green
+Block 1224 359 0 0 20 0 ground green
+Block 1264 359 0 0 20 0 ground green
+Block 1304 359 0 0 20 0 ground green
+Block 1344 359 0 0 20 0 ground green
+Block 1384 359 0 0 20 0 ground green
+Block 1424 359 0 0 20 0 ground green
+Block 1464 359 0 0 20 0 ground green

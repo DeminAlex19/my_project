@@ -102,10 +102,11 @@ def execution():
         hero.vx = 0.5
     if press_button_left:
         hero.vx = -0.5
-    if press_button_up and checkground(hero, level_objects):
-        hero.vy -= 1
+    if press_button_up:#and checkground(hero, level_objects)
+        hero.vy -= 0.5
     if press_button_down:
         hero.typeattack = 'fall'
+        hero.vy += 0.5
     if press_button_special:
         special(hero)
         press_button_special = False
@@ -116,7 +117,7 @@ def execution():
         move(body, time_step)
         for obj in level_objects:
             if obj != body:
-                check_hit(body, obj)
+                check_hit(body, obj, level_objects)
         accel(body, time_step, level_objects)
     coords_win = change_position(hero, size_level, coords_win, window_width, window_height)
     for obj in level_objects:
