@@ -12,9 +12,7 @@ root.geometry(str(window_width) + 'x' + str(window_height + 20))
 window = None
 frame = None
 
-list_levels = [
-    'Level 1'
-]
+list_levels = ['Level 1', 'Level 2', 'Level 3']
 level_objects = []
 size_level = 0
 coords_win = [0, 0]
@@ -98,34 +96,31 @@ def execution():
     global press_button_act
     global press_button_special
     level_time += time_step
+
     if press_button_right:
-        hero.vx = 0.5
+        hero.vx = 1
     if press_button_left:
-        hero.vx = -0.5
-    if press_button_up:#and checkground(hero, level_objects)
-        hero.vy -= 0.5
+        hero.vx = -1
+    if press_button_up and checkground(hero, level_objects):
+        hero.vy = -4
     if press_button_down:
         hero.typeattack = 'fall'
-        hero.vy += 0.5
+        hero.vy = 1
     if press_button_special:
         special(hero)
         press_button_special = False
     if press_button_act and press_button_special != True:
         action(hero)
         press_button_act = False
-    for body in level_objects:
-        move(body, time_step)
-        for obj in level_objects:
-            if obj != body:
-                check_hit(body, obj, level_objects)
-        accel(body, time_step, level_objects)
+    if hero.status == 'level end':
+        level_end()
+    move(level_objects)
     coords_win = change_position(hero, size_level, coords_win, window_width, window_height)
     for obj in level_objects:
         update_image(window, obj, coords_win)
-
-    print(hero.x, hero.y, hero.vx, hero.vy)
     if flag_perform:
         window.after(time_step, execution)
+
 
 
 def start_level(level_name):
@@ -208,6 +203,9 @@ def menu():
         level_button.pack()
         del level_button
 
+def level_end():
+    stop_execution()
+    menu()
 
 def main():
     global time_step

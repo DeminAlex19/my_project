@@ -17,15 +17,24 @@ class Block:
 
     color = 'green'
 
+    movetime = 0
+
+    nowtime = 0
+
     def parse_parametrs(self, line):
         self.x = float(line.split()[1])
         self.y = float(line.split()[2])
         self.vx = float(line.split()[3])
         self.vy = float(line.split()[4])
         self.r = float(line.split()[5])
+        self.movetime = float(line.split()[6])
         self.damage = float(line.split()[6])
         self.type = line.split()[7].lower()
         self.color = line.split()[8].lower()
+        if (self.vx != 0 or self.vy != 0):
+            self.movetime = float(line.split()[9])
+            self.nowtime = float(line.split()[10])
+
 
 
 class Body:
@@ -44,6 +53,8 @@ class Body:
     image = None
 
     life = 10
+
+    status = None
 
     type_attack = None
 
@@ -74,6 +85,8 @@ class Body:
 
 
 class Item:
+    type = None
+
     type_attack = None
 
     color = 'yellow'
@@ -83,10 +96,11 @@ class Item:
     cost = 0
 
     def parse_parametrs(self, line):
-        self.type_attack = line.split()[1].lower()
-        self.damage = float(line.split()[2])
-        self.cost = int(line.split()[3])
-        self.color = line.split()[4].lower()
+        self.type = line.split()[1].lower()
+        self.type_attack = line.split()[2].lower()
+        self.damage = float(line.split()[3])
+        self.cost = int(line.split()[4])
+        self.color = line.split()[5].lower()
 
 
 def count_size_level(objects):
