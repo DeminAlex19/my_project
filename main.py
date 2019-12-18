@@ -19,6 +19,8 @@ coords_win = [0, 0]
 hero = None
 score = 0
 level_name = ''
+dead_scene = None
+end_after = None
 
 flag_perform = False
 '''Флаг основногой цикличности'''
@@ -101,6 +103,7 @@ def execution():
     global level_time
     global time_step
     global pause_button
+    global continue_button
     global hero
     global level_objects
     global size_level
@@ -113,6 +116,8 @@ def execution():
     global press_button_special
     global score
     global score_options
+    global dead_scene
+    global end_after
     level_time += time_step/1000
 
     if press_button_right:
@@ -134,6 +139,7 @@ def execution():
         score = 50
         if level_time > score_options[0]:
             score -= int(level_time - score_options[0])*score_options[1]
+
         score -= (10 - hero.life)*10
         if score < 0:
             score = 0
@@ -142,6 +148,17 @@ def execution():
         level_time = 0
         stop_execution()
         level_end()
+    if hero.y >= window_height or hero.life <= 0:
+        stop_execution()
+        if continue_button != None:
+            continue_button.destroy()
+            continue_button = None
+        if pause_button != None:
+            pause_button.destroy()
+            pause_button = None
+        dead_scene = tkinter.Label(window, text='\n\nYou are died...', bg='black', fg='red', font=('Arial 64', 64, 'bold'))
+        dead_scene.pack()
+        end_after = root.after(3000, level_end)
     move(level_objects, hero)
     coords_win = change_position(hero, size_level, coords_win, window_width, window_height)
     for obj in level_objects:
@@ -233,6 +250,12 @@ def level_end():
     global flag_perform
     global pause_button
     global level_name
+    global dead_scene
+    global end_after
+    del end_after
+    if dead_scene != None:
+        dead_scene.destroy()
+        dead_scene = None
     flag_perform = False
     level_name = ''
     score = 0
