@@ -1,5 +1,7 @@
 from classes import *
 import datetime
+ds = 0
+time_max = 0
 
 
 def read_level(level_name):
@@ -30,6 +32,17 @@ def read_level(level_name):
     return objects
 
 
+def score_option(level_name):
+    list = [0, 0]
+    with open(level_name + '.txt') as input_file:
+        print(level_name)
+        for line in input_file:
+            if line.split()[0].lower() == "option":
+                list[0] = float(line.split()[1])
+                list[1] = float(line.split()[2])
+    return list
+
+
 def find_hero(objects, hero):
     for obj in objects:
         if obj.type == 'hero':
@@ -37,10 +50,6 @@ def find_hero(objects, hero):
     return hero
 
 
-def write_scores(file, score):
-    with open(file, 'w') as out_file:
-        print(out_file, "%s %d" % (str(datetime.datetime.now()), score))
-
-
-def view_scores(win):
-    None
+def write_scores(file, level_name, score):
+    with open(file, 'a') as out_file:
+        out_file.write("%s %s, score: %d\n" % (str(datetime.datetime.now()), level_name, score))

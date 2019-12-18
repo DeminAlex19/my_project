@@ -6,7 +6,7 @@ def sign(x):
     return 0
 
 
-def move(level_objects):
+def move(level_objects, hero):
     for obj in level_objects:
         accel(obj, level_objects)
         obj.x += obj.vx
@@ -15,16 +15,13 @@ def move(level_objects):
         for j in range(i+1, len(level_objects)):
             if check_collusion(level_objects[i], level_objects[j]):
                 collusion(level_objects[i], level_objects[j])
-
+    hero.vx = 0
 
 
 def accel(obj, level_objects):
     if type(obj).__name__ == 'Body':
-        obj.vx -= sign(obj.vx) * 0.01
-        if - 0.2 < obj.vx < 0.2:
-            obj.vx = 0
         if not checkground(obj, level_objects) and type(obj).__name__ == 'Body':
-            obj.vy += 0.1
+            obj.vy += 0.05
         if checkground(obj, level_objects):
             if obj.vy > 0:
                 obj.vy = 0
@@ -37,18 +34,17 @@ def accel(obj, level_objects):
 
 
 def checkground(hero, level_objects):
-    if hero.y >= 700:
-        hero.life = 0
     for obj in level_objects:
         if obj.type == 'ground':
             if (hero.x + hero.r > obj.x - obj.r > hero.x - hero.r or hero.x + hero.r > obj.x + obj.r > hero.x - hero.r or hero.x + hero.r <= obj.x + obj.r and hero.x - hero.r >= obj.x - obj.r) and (hero.y + hero.r <= obj.y - obj.r <= hero.y + hero.r):
                 hero.y = obj.y - hero.r - obj.r
                 return True
         elif obj.type == 'exit':
-            if (hero.x + hero.r > obj.x - obj.r > hero.x - hero.r or hero.x + hero.r > obj.x + obj.r > hero.x - hero.r or hero.x + hero.r <= obj.x + obj.r and hero.x - hero.r >= obj.x - obj.r) and (hero.y + hero.r == obj.y - obj.r):
+            if (hero.x + hero.r >= obj.x - obj.r >= hero.x - hero.r or hero.x + hero.r >= obj.x + obj.r >= hero.x - hero.r or hero.x + hero.r <= obj.x + obj.r and hero.x - hero.r >= obj.x - obj.r) and (hero.y + hero.r >= obj.y - obj.r >= hero.y - hero.r or hero.y + hero.r >= obj.y + obj.r >= hero.y - hero.r or hero.y + hero.r <= obj.y + obj.r and hero.y - hero.r >= obj.y - obj.r):
                 hero.status = 'level end'
-                return True
+                return False
     return False
+
 
 def check_collusion(obj1, obj2):
     if type(obj1).__name__ != 'Body' and type(obj2).__name__ != 'Body':
@@ -89,9 +85,6 @@ def collusion(obj1, obj2):
             else:
                 obj1.y = obj2.y + sign(obj1.vy - obj2.vy + 0.00000001)*(obj1.r + obj2.r)
             obj1.vy = obj2.vy
-
-
-
 
 
 def action(body):

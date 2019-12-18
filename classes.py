@@ -15,6 +15,10 @@ class Block:
 
     image = None
 
+    im = None
+
+    imagetk = None
+
     color = 'green'
 
     movetime = 0
@@ -30,11 +34,10 @@ class Block:
         self.movetime = float(line.split()[6])
         self.damage = float(line.split()[6])
         self.type = line.split()[7].lower()
-        self.color = line.split()[8].lower()
+        self.image = line.split()[8].lower()
         if (self.vx != 0 or self.vy != 0):
             self.movetime = float(line.split()[9])
             self.nowtime = float(line.split()[10])
-
 
 
 class Body:
@@ -51,6 +54,10 @@ class Body:
     r = 0
 
     image = None
+
+    im = None
+
+    imagetk = None
 
     life = 10
 
@@ -81,7 +88,7 @@ class Body:
         self.loyalty = int(line.split()[10])
         self.exp_reward = int(line.split()[11])
         self.gold_reward = int(line.split()[12])
-        self.color = line.split()[13].lower()
+        self.image = line.split()[13].lower()
 
 
 class Item:

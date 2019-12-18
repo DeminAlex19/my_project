@@ -1,42 +1,15 @@
-Body 104 319 0 0 20 Hero 10 hit 10 1 0 0 red
-Block 64 239 0 0 20 0 ground green
-Block 64 279 0 0 20 0 ground green
-Block 64 319 0 0 20 0 ground green
-Block 64 359 0 0 20 0 ground green
-Block 104 359 0 0 20 0 ground green
-Block 144 359 0 0 20 0 ground green
-Block 184 319 0 0 20 0 ground green
-Block 184 359 0 0 20 0 ground green
-Block 224 359 0 0 20 0 ground green
-Block 264 359 0 0 20 0 ground green
-Block 304 359 0 0 20 0 ground green
-Block 344 359 0 0 20 0 ground green
-Block 344 319 0 0 20 0 ground green
-Block 384 359 0 0 20 0 ground green
-Block 424 359 0 0 20 0 ground green
-Block 464 359 0 0 20 0 ground green
-Block 504 359 0 0 20 0 ground green
-Block 544 359 0 0 20 0 ground green
-Block 584 359 0 0 20 0 ground green
-Block 624 359 0 0 20 0 ground green
-Block 664 359 0 0 20 0 ground green
-Block 704 359 0 0 20 0 exit yellow
-Block 744 359 0 0 20 0 ground green
-Block 784 359 0 0 20 0 ground green
-Block 824 359 0 0 20 0 ground green
-Block 864 359 0 0 20 0 ground green
-Block 904 359 0 0 20 0 ground green
-Block 944 359 0 0 20 0 ground green
-Block 984 359 0 0 20 0 ground green
-Block 1024 359 0 0 20 0 ground green
-Block 1064 359 0 0 20 0 ground green
-Block 1104 359 0 0 20 0 ground green
-Block 1144 359 0 0 20 0 ground green
-Block 1184 359 0 0 20 0 ground green
-Block 1224 359 0 0 20 0 ground green
-Block 1264 359 0 0 20 0 ground green
-Block 1304 359 0 0 20 0 ground green
-Block 1344 359 0 0 20 0 ground green
-Block 1384 359 0 0 20 0 ground green
-Block 1424 359 0 0 20 0 ground green
-Block 1464 359 0 0 20 0 ground green
+Option 5 2
+Body 0 250 0 0 20 Hero 10 hit 10 1 0 0 hero.gif
+Block 0 300 0 0 20 0 ground ground.gif
+Block 50 250 0 0 20 0 ground ground.gif
+Block 100 200 0 0 20 0 ground ground.gif
+Block 150 150 0 0 20 0 ground ground.gif
+Block 250 250 0 0 20 0 ground ground.gif
+Block 350 350 0 0 20 0 ground ground.gif
+Block 450 450 0 0 20 0 ground ground.gif
+Block 550 450 0 0 20 0 exit end.gif
+Block 590 450 0 0 20 0 exit end.gif
+Block 100 550 0.5 0 20 0 ground ground.gif 300 150
+Block 400 550 -0.5 0 20 0 ground ground.gif 300 150
+Block 140 550 0.5 0 20 0 ground ground.gif 300 150
+Block 360 550 -0.5 0 20 0 ground ground.gif 300 150
