@@ -1,6 +1,3 @@
-
-
-
 def sign(x):
     if x > 0:
         return 1
@@ -20,9 +17,12 @@ def move(level_objects):
                 collusion(level_objects[i], level_objects[j])
 
 
+
 def accel(obj, level_objects):
     if type(obj).__name__ == 'Body':
         obj.vx -= sign(obj.vx) * 0.01
+        if - 0.2 < obj.vx < 0.2:
+            obj.vx = 0
         if not checkground(obj, level_objects) and type(obj).__name__ == 'Body':
             obj.vy += 0.1
         if checkground(obj, level_objects):
@@ -37,7 +37,8 @@ def accel(obj, level_objects):
 
 
 def checkground(hero, level_objects):
-    global game
+    if hero.y >= 700:
+        hero.life = 0
     for obj in level_objects:
         if obj.type == 'ground':
             if (hero.x + hero.r > obj.x - obj.r > hero.x - hero.r or hero.x + hero.r > obj.x + obj.r > hero.x - hero.r or hero.x + hero.r <= obj.x + obj.r and hero.x - hero.r >= obj.x - obj.r) and (hero.y + hero.r <= obj.y - obj.r <= hero.y + hero.r):

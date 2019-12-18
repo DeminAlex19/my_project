@@ -1,14 +1,14 @@
-Body 0 250 0 0 20 Hero 10 hit 10 1 0 0 red
-Block 0 300 0 0 20 0 ground green
-Block 50 250 0 0 20 0 ground green
-Block 100 200 0 0 20 0 ground green
-Block 150 150 0 0 20 0 ground green
-Block 250 250 0 0 20 0 ground green
-Block 350 350 0 0 20 0 ground green
-Block 450 450 0 0 20 0 ground green
-Block 550 450 0 0 20 0 exit yellow
-Block 590 450 0 0 20 0 exit yellow
-Block 100 550 0.5 0 20 0 ground green 300 150
-Block 400 550 -0.5 0 20 0 ground green 300 150
-Block 140 550 0.5 0 20 0 ground green 300 150
-Block 360 550 -0.5 0 20 0 ground green 300 150
+Body 100 250 0 0 20 Hero 10 hit 10 1 0 0 red
+Block 100 300 0 0 20 0 ground green
+Block 150 250 0 0 20 0 ground green
+Block 200 200 0 0 20 0 ground green
+Block 250 150 0 0 20 0 ground green
+Block 350 250 0 0 20 0 ground green
+Block 450 350 0 0 20 0 ground green
+Block 550 450 0 0 20 0 ground green
+Block 650 450 0 0 20 0 exit yellow
+Block 690 450 0 0 20 0 exit yellow
+Block 200 550 0.5 0 20 0 ground green 300 150
+Block 500 550 -0.5 0 20 0 ground green 300 150
+Block 240 550 0.5 0 20 0 ground green 300 150
+Block 460 550 -0.5 0 20 0 ground green 300 150
